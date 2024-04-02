@@ -3,22 +3,26 @@ import Service from "../../components/Service";
 
 const Services = () => {
 	return (
-		<section className="pt-16 pb-16">
+		<section className="pt-16 pb-16 mb-[192px]">
 			<h2 className="font-playfair text-[52px] text-center">Our Services</h2>
 			<Container>
 				<div className="grid grid-cols-2 justify-between mt-[94px] gap-x-[100px]">
 					<div className="flex gap-x-5">
 						<div className="flex flex-col gap-y-5">
-							<img
-								className="w-[341px] h-[203px] object-cover"
-								src="/assets/images/service1.png"
-								alt=""
-							/>
-							<img
-								className="w-[302px] h-[257px] object-cover self-end"
-								src="/assets/images/service3.png"
-								alt=""
-							/>
+							<div className="rounded-[10px] overflow-hidden">
+								<img
+									className="w-[341px] h-[203px] object-cover"
+									src="/assets/images/service1.png"
+									alt=""
+								/>
+							</div>
+							<div className="rounded-[10px] overflow-hidden">
+								<img
+									className="w-[302px] h-[257px] object-cover self-end"
+									src="/assets/images/service3.png"
+									alt=""
+								/>
+							</div>
 						</div>
 						<div className="flex flex-col gap-y-5">
 							<img

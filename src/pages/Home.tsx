@@ -6,7 +6,7 @@ import StyleSeason from "../sections/home/styleSeason";
 function Home() {
 	return (
 		<PageContainer>
-			{/* <Hero /> */}
+			<Hero />
 			<StyleSeason />
 			<Services />
 		</PageContainer>

@@ -33,17 +33,20 @@ const StyleSeason = () => {
 					</p>
 				</header>
 				<div className="grid grid-cols-3 mt-12 gap-x-12">
+					{/* Add Animation Here */}
 					{styles.map(({ image, description }) => (
-						<div className="max-w-[400px] w-full grid justify-items-center shrink">
-							<img
-								className="w-full h-[full] object-cover"
-								src={image}
-								alt=""
-							/>
-							<p className="font-light leading-7 text-lg mt-6 text-left px-1 text-[#525252]">
+						<div className="max-w-[400px] w-full grid justify-items-center">
+							<div className="w-full h-[400px]">
+								<img
+									className="w-full h-full object-cover"
+									src={image}
+									alt=""
+								/>
+							</div>
+							<p className="font-light leading-7 text-lg text-center text-[#525252] self-start mt-[26px]">
 								{description}
 							</p>
-							<button className="w-[230px] bg-black text-white font-bold mt-9 py-4">
+							<button className="w-[230px] bg-black text-white font-bold py-4 mt-9">
 								Summer Collection
 							</button>
 						</div>

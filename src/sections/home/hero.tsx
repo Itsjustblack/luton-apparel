@@ -4,17 +4,12 @@ import Product from "../../components/Product";
 const Hero = () => {
 	return (
 		<section className="pt-[101px] relative pb-[130px]">
-			<Container className="pt-[74px] grid grid-cols-[530px_auto] gap-x-10 xl:gap-x-14">
+			<Container className="pt-[74px] grid grid-cols-[567px_auto] xl:grid-cols-[530px_auto] gap-x-10 xl:gap-x-14 justify-between">
 				<img
 					className="absolute top-[100px] -left-[10px] z-[12]"
 					src="/assets/icons/bgPattern.svg"
 					alt="Background Pattern"
 				/>
-				{/* <img
-					className="absolute -bottom-3 -right-[10px] rotate-180 z-[12]"
-					src="/assets/icons/bgPattern.svg"
-					alt="Background Pattern"
-				/> */}
 				<div className="pt-3">
 					<h1 className="text-[52px] leading-[69.32px] font-playfair">
 						Pocket-friendly picks <br /> to get your best{" "}
@@ -37,7 +32,12 @@ const Hero = () => {
 							/>
 						</div>
 					</div>
-					<div className="border border-black rounded-lg mt-[52px] flex items-center justify-center gap-x-3 py-9 w-full">
+					<div className="border border-black rounded-lg mt-[52px] flex items-center justify-center gap-x-3 py-9 w-full relative">
+						<img
+							className="absolute top-[-10px] left-[-13px]"
+							src="/assets/icons/confetti.svg"
+							alt=""
+						/>
 						<span className="text-[40px] font-light">10K</span>
 						<p className="">
 							We’re proud to announce that we have now opened <br /> stores in{" "}
@@ -47,14 +47,16 @@ const Hero = () => {
 					</div>
 				</div>
 				<div className="flex gap-x-5 justify-between">
-					<Product
-						name="Luton Classic"
-						price={59}
-						type="Teal Brogues"
-						image="/assets/images/product2.png"
-						showTag
-						size="normal"
-					/>
+					<div className="xl:block hidden">
+						<Product
+							name="Luton Classic"
+							price={59}
+							type="Teal Brogues"
+							image="/assets/images/product2.png"
+							showTag
+							size="normal"
+						/>
+					</div>
 					<div className="grid gap-y-5 justify-between">
 						<Product
 							name="Luton Classic"
@@ -69,6 +71,11 @@ const Hero = () => {
 							image="/assets/images/product3.png"
 						/>
 					</div>
+					<img
+						className="absolute bottom-0 right-0 rotate-180 z-[12]"
+						src="/assets/icons/bgPattern.svg"
+						alt="Background Pattern"
+					/>
 				</div>
 			</Container>
 		</section>

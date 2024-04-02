@@ -3,6 +3,8 @@ import NavBar from "./components/NavBar";
 import Home from "./pages/Home";
 import { useEffect } from "react";
 import Lenis from "@studio-freight/lenis/types";
+import Footer from "./sections/footer";
+import { Layout } from "./components/Layout";
 
 const App = () => {
 	const { pathname } = useLocation();
@@ -25,7 +27,7 @@ const App = () => {
 		}, 300);
 	}, [pathname]);
 	return (
-		<>
+		<Layout>
 			<NavBar />
 			<Routes>
 				<Route
@@ -33,7 +35,8 @@ const App = () => {
 					element={<Home />}
 				/>
 			</Routes>
-		</>
+			<Footer />
+		</Layout>
 	);
 };
 
