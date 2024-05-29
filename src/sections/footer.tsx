@@ -3,7 +3,7 @@ import Container from "../components/Container";
 const Footer = () => {
 	return (
 		<footer className="w-full bg-black text-white">
-			<Container>
+			<Container className="h-screen my-auto">
 				<div className="flex justify-between max-w-[1100px] pt-12 items-center mx-auto">
 					<img
 						src="/assets/icons/logo.svg"

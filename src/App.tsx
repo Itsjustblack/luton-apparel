@@ -1,41 +1,58 @@
-import { Route, Routes, useLocation } from "react-router-dom";
-import NavBar from "./components/NavBar";
-import Home from "./pages/Home";
+import { AnimatePresence } from "framer-motion";
 import { useEffect } from "react";
-import Lenis from "@studio-freight/lenis/types";
-import Footer from "./sections/footer";
+import { Route, Routes, useLocation } from "react-router-dom";
 import { Layout } from "./components/Layout";
+import NavBar from "./components/NavBar";
+import Collection from "./pages/Collection";
+import Gallery from "./pages/Gallery";
+import Home from "./pages/Home";
+import Loader from "./pages/Loader";
+import Products from "./pages/Products";
+import Footer from "./sections/footer";
 
 const App = () => {
-	const { pathname } = useLocation();
+	const location = useLocation();
 
 	useEffect(() => {
-		const lenis = new Lenis();
-
-		function raf(time: any) {
-			lenis.raf(time);
-			requestAnimationFrame(raf);
-		}
-
-		requestAnimationFrame(raf);
-	});
-
-	// Automatically scrolls to top whenever pathname changes
-	useEffect(() => {
-		setTimeout(() => {
+		const id = setTimeout(() => {
 			window.scrollTo(0, 0);
-		}, 300);
-	}, [pathname]);
+		}, 100);
+
+		return () => clearTimeout(id);
+	}, [location.pathname]);
+
 	return (
 		<Layout>
-			<NavBar />
-			<Routes>
-				<Route
-					path="/"
-					element={<Home />}
-				/>
-			</Routes>
-			<Footer />
+			{location.pathname !== "/" && <NavBar />}
+			<AnimatePresence mode="wait">
+				<Routes
+					location={location}
+					key={location.pathname}
+				>
+					<Route
+						path="/"
+						element={<Loader />}
+					/>
+					<Route
+						path="/home"
+						element={<Home />}
+					/>
+					<Route
+						path="/products"
+						element={<Products />}
+					/>
+					<Route
+						path="/gallery"
+						element={<Gallery />}
+					/>
+					<Route
+						path="/collection/:name"
+						element={<Collection />}
+					/>
+				</Routes>
+			</AnimatePresence>
+			{location.pathname !== "/" &&
+				!location.pathname.includes("collection") && <Footer />}
 		</Layout>
 	);
 };

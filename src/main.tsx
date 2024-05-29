@@ -3,11 +3,14 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import "./index.css";
 import { BrowserRouter } from "react-router-dom";
+import TransitionProvider from "./components/TransitionProvider";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
 	<React.StrictMode>
 		<BrowserRouter>
-			<App />
+			<TransitionProvider>
+				<App />
+			</TransitionProvider>
 		</BrowserRouter>
 	</React.StrictMode>
 );

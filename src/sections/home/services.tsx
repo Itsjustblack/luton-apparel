@@ -1,22 +1,69 @@
+import { AnimationSequence, useAnimate, useInView } from "framer-motion";
 import Container from "../../components/Container";
 import Service from "../../components/Service";
+import { useEffect } from "react";
+import { easing } from "../../utils/constants";
 
 const Services = () => {
+	const [scope, animate] = useAnimate();
+	const isInView = useInView(scope, { once: true });
+
+	useEffect(() => {
+		let controls;
+		const sequence: AnimationSequence = [
+			[
+				"#box1",
+				{ x: [-200, 0], opacity: [0, 1] },
+				{ duration: 0.5, ease: easing },
+			],
+			[
+				"#box2",
+				{ x: [200, 0], opacity: [0, 1] },
+				{ duration: 0.5, ease: easing, at: "+0" },
+			],
+			[
+				"#box3",
+				{ y: [200, 0], opacity: [0, 1] },
+				{ duration: 0.5, ease: easing, at: "+0" },
+			],
+			[
+				"#box4",
+				{ x: [200, 0], opacity: [0, 1] },
+				{ duration: 0.5, ease: easing, at: "+0" },
+			],
+		];
+
+		if (isInView) {
+			controls = animate(sequence);
+		}
+
+		return controls?.stop;
+	}, [animate, isInView]);
+
 	return (
 		<section className="pt-16 pb-16 mb-[192px]">
 			<h2 className="font-playfair text-[52px] text-center">Our Services</h2>
 			<Container>
 				<div className="grid grid-cols-2 justify-between mt-[94px] gap-x-[100px]">
-					<div className="flex gap-x-5">
+					<div
+						ref={scope}
+						className="flex gap-x-5"
+					>
 						<div className="flex flex-col gap-y-5">
-							<div className="rounded-[10px] overflow-hidden">
+							<div
+								id="box1"
+								className="rounded-[10px] overflow-hidden"
+							>
 								<img
 									className="w-[341px] h-[203px] object-cover"
 									src="/assets/images/service1.png"
 									alt=""
 								/>
 							</div>
-							<div className="rounded-[10px] overflow-hidden">
+							<div
+								id="box3"
+								className="rounded-[10px] overflow-hidden"
+							>
 								<img
 									className="w-[302px] h-[257px] object-cover self-end"
 									src="/assets/images/service3.png"
@@ -26,11 +73,13 @@ const Services = () => {
 						</div>
 						<div className="flex flex-col gap-y-5">
 							<img
+								id="box2"
 								className="w-[261px] h-[159px] object-cover mt-4"
 								src="/assets/images/service2.png"
 								alt=""
 							/>
 							<img
+								id="box4"
 								className="h-full w-full object-cover"
 								src="/assets/images/service4.png"
 								alt=""

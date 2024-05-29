@@ -24,7 +24,7 @@ const Product: FC<Props> = ({
 			onHoverStart={() => setIsActive(true)}
 			onHoverEnd={() => setIsActive(false)}
 			style={{ height: size == "mini" ? 264 : 551 }}
-			className="relative w-[295px]"
+			className="relative w-[295px] cursor-pointer"
 		>
 			{showTag ? (
 				<img
@@ -52,11 +52,11 @@ const Product: FC<Props> = ({
 					transition={{ duration: 0.5, ease: "easeInOut" }}
 					className="bg-white w-full mx-3 relative z-10 h-[60px] px-4 pt-1 pb-2 mb-5 rounded-lg flex items-center justify-between"
 				>
-					<div className="">
-						<span className="font-bold text-2xl">{name}</span>
+					<div>
+						<span className="font-bold text-2xl text-black">{name}</span>
 						<p className="text-sm text-[#777777]">{type}</p>
 					</div>
-					<span className="text-xl leading-8">{`$${price}`}</span>
+					<span className="text-xl leading-8 text-black">{`$${price}`}</span>
 				</motion.div>
 			</div>
 		</motion.div>
