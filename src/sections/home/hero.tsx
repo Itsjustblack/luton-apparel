@@ -1,8 +1,9 @@
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import { useMotionValueEvent, useScroll } from "framer-motion";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Container from "../../components/Container";
 import Product from "../../components/Product";
+import { TransitionContext } from "../../components/TransitionProvider";
 
 const Hero = () => {
 	const [isShown, setIsShown] = useState(false);
@@ -12,6 +13,8 @@ const Hero = () => {
 	useMotionValueEvent(scrollY, "change", (latest) => {
 		latest > 100 && setIsShown(true);
 	});
+
+	const { changePage } = useContext(TransitionContext);
 
 	return (
 		<section className="pt-[101px] relative pb-[130px]">
@@ -31,23 +34,29 @@ const Hero = () => {
 						from the same stuff. Check it out!
 					</p>
 					<div className="flex justify-start mt-[53px] gap-x-10">
-						<button className="bg-[#FFF2E7] text-black rounded-xl px-4 py-3 text-lg font-bold">
+						<button
+							onClick={() => changePage("/products")}
+							className="bg-[#FFF2E7] text-black rounded-xl px-4 py-3 text-lg font-bold"
+						>
 							Browse Our Collection
 						</button>
-						<div className="flex items-center gap-x-2">
+						<button
+							onClick={() => changePage("/collection/spring")}
+							className="flex items-center gap-x-2 group"
+						>
 							<span className="text-lg font-light text-black">
 								Spring ‘23 collection{" "}
 							</span>
 							<img
-								className="w-[18px]"
+								className="w-[18px] group-hover:translate-x-3 transition-transform duration-200 ease-linear"
 								src="/assets/icons/rightArrow.svg"
 								alt=""
 							/>
-						</div>
+						</button>
 					</div>
 					<div className="border border-black rounded-lg mt-[52px] flex items-center justify-center gap-x-3 py-9 w-full relative">
 						{isShown && (
-							<div className="confetti-container">
+							<div className="confetti-container pointer-events-none">
 								<DotLottieReact
 									autoplay
 									src="/assets/lotties/confetti.json"

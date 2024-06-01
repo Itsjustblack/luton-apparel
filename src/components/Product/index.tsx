@@ -24,7 +24,7 @@ const Product: FC<Props> = ({
 			onHoverStart={() => setIsActive(true)}
 			onHoverEnd={() => setIsActive(false)}
 			style={{ height: size == "mini" ? 264 : 551 }}
-			className="relative w-[295px] cursor-pointer"
+			className="relative w-[295px]"
 		>
 			{showTag ? (
 				<img

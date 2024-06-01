@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { TransitionContext } from "../TransitionProvider";
 
 const ProductPreview = ({
 	src,
@@ -10,7 +11,8 @@ const ProductPreview = ({
 	title: string;
 	path: string;
 }) => {
-	const navigate = useNavigate();
+	const { changePage } = useContext(TransitionContext);
+
 	return (
 		<div className="shrink-0 relative">
 			<motion.img
@@ -22,8 +24,8 @@ const ProductPreview = ({
 				<h1 className="font-playfair text-[52px] mb-6">{title}</h1>
 				<button
 					type="button"
-					onClick={() => navigate(path)}
-					className="bg-[#d9d9d966] border border-white font-playfair max-w-[146px] w-full py-[10px] rounded-[50px]"
+					onClick={() => changePage(path)}
+					className="bg-[#d9d9d966] hover:bg-white hover:text-[#212121] transition-colors duration-150 ease-linear border border-white font-playfair max-w-[146px] w-full py-[10px] rounded-[50px]"
 				>
 					Explore
 				</button>

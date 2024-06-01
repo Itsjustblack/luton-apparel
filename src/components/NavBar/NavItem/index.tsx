@@ -1,5 +1,4 @@
 import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
 import { TransitionContext } from "../../TransitionProvider";
 
 interface NavItemProps {
@@ -8,20 +7,11 @@ interface NavItemProps {
 }
 
 const NavItem: React.FC<NavItemProps> = ({ text, link }) => {
-	const { setInTransition } = useContext(TransitionContext);
-
-	const navigate = useNavigate();
-
-	const changePage = () => {
-		setInTransition(true);
-		setTimeout(() => {
-			navigate(link);
-		}, 1500);
-	};
+	const { changePage } = useContext(TransitionContext);
 
 	return (
 		<p
-			onClick={changePage}
+			onClick={() => changePage(link)}
 			className="font-sm hover:border-b border-black hover:cursor-pointer"
 		>
 			{text}

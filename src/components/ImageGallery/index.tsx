@@ -50,7 +50,11 @@ const ImageGallery = ({ collection }: { collection: string }) => {
 	}, [duration, mustFinish, width, xTranslation]);
 
 	return (
-		<div className="w-full overflow-y-auto overflow-x-hidden relative">
+		<motion.div
+			initial={{ opacity: 0 }}
+			animate={{ opacity: 1, transition: { duration: 0.5, ease: "linear" } }}
+			className="w-full overflow-y-auto overflow-x-hidden relative"
+		>
 			<div className="absolute rounded-r-md h-full w-20 top-0 left-0 rotate-180 z-10 bg-gradient-to-l from-[rgba(73,73,73,0.5160189075630253)] to-[rgba(0,0,0,0)]"></div>
 			<div className="absolute rounded-r-md h-full w-20 top-0 right-0 z-10 bg-gradient-to-l from-[rgba(73,73,73,0.5160189075630253)] to-[rgba(0,0,0,0)]"></div>
 			<motion.div
@@ -79,7 +83,7 @@ const ImageGallery = ({ collection }: { collection: string }) => {
 					/>
 				))}
 			</motion.div>
-		</div>
+		</motion.div>
 	);
 };
 

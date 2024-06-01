@@ -3,7 +3,10 @@ import { motion } from "framer-motion";
 const Gallery = () => {
 	return (
 		<motion.main
-			exit={{ opacity: 0, transition: { duration: 0.5, ease: "linear" } }}
+			initial={{ opacity: 0 }}
+			animate={{ opacity: 1 }}
+			exit={{ opacity: 0 }}
+			transition={{ duration: 0.5, ease: "linear" }}
 			className="pt-[56px]"
 		>
 			<section className="w-full relative overflow-hidden">

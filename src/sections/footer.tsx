@@ -30,36 +30,20 @@ const Footer = () => {
 					<div className="flex gap-x-20">
 						<div>
 							<p className="text-lg text-[#525252]">Help</p>
-							<p className="underline underline-offset-4 font-extralight mt-10">
-								Enquiries
-							</p>
-							<p className="underline underline-offset-4 font-extralight mt-7">
-								Order Now
-							</p>
+							<p className="font-extralight mt-10">Enquiries</p>
+							<p className="font-extralight mt-7">Order Now</p>
 						</div>
 						<div>
 							<p className="text-lg text-[#525252]">The Company</p>
-							<p className="underline underline-offset-4 font-extralight mt-10">
-								About Luton
-							</p>
-							<p className="underline underline-offset-4 font-extralight mt-7">
-								Legal
-							</p>
-							<p className="underline underline-offset-4 font-extralight mt-7">
-								Code of Ethics
-							</p>
+							<p className="font-extralight mt-10">About Luton</p>
+							<p className="font-extralight mt-7">Legal</p>
+							<p className="font-extralight mt-7">Code of Ethics</p>
 						</div>
 						<div>
 							<p className="text-lg text-[#525252]">Socials</p>
-							<p className="underline underline-offset-4 font-extralight mt-10">
-								Instagram
-							</p>
-							<p className="underline underline-offset-4 font-extralight mt-7">
-								Twitter
-							</p>
-							<p className="underline underline-offset-4 font-extralight mt-7">
-								Youtube
-							</p>
+							<p className="font-extralight mt-10">Instagram</p>
+							<p className="font-extralight mt-7">Twitter</p>
+							<p className="font-extralight mt-7">Youtube</p>
 						</div>
 					</div>
 					<div className="w-full pl-5">
