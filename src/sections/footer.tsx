@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Container from "../components/Container";
 
 const Footer = () => {
@@ -5,21 +6,23 @@ const Footer = () => {
 		<footer className="w-full bg-black text-white">
 			<Container className="h-screen my-auto">
 				<div className="flex justify-between max-w-[1100px] pt-12 items-center mx-auto">
-					<img
-						src="/assets/icons/logo.svg"
-						alt="menu icon"
-					/>
+					<h1 className="text-3xl font-semibold text-white font-playfair ml-[52px]">
+						Luton
+					</h1>
 					<span className="font-bold">© 2020 - 2023 Luton Inc</span>
 					<div className="flex gap-x-5">
 						<img
+							className="cursor-pointer pointer-events-auto"
 							src="/assets/icons/instagram.svg"
 							alt=""
 						/>
 						<img
+							className="cursor-pointer pointer-events-auto"
 							src="/assets/icons/twitter.svg"
 							alt=""
 						/>
 						<img
+							className="cursor-pointer pointer-events-auto"
 							src="/assets/icons/youtube.svg"
 							alt=""
 						/>
@@ -29,21 +32,76 @@ const Footer = () => {
 				<div className="mt-[94px] pb-14 grid grid-cols-[500px_auto] gap-x-20 items-center">
 					<div className="flex gap-x-20">
 						<div>
-							<p className="text-lg text-[#525252]">Help</p>
-							<p className="font-extralight mt-10">Enquiries</p>
-							<p className="font-extralight mt-7">Order Now</p>
+							<Link
+								to="/"
+								className="block text-lg text-[#525252]"
+							>
+								Help
+							</Link>
+							<Link
+								to="/"
+								className="block font-extralight mt-10"
+							>
+								Enquiries
+							</Link>
+							<Link
+								to="/"
+								className="block font-extralight mt-7"
+							>
+								Order Now
+							</Link>
 						</div>
 						<div>
-							<p className="text-lg text-[#525252]">The Company</p>
-							<p className="font-extralight mt-10">About Luton</p>
-							<p className="font-extralight mt-7">Legal</p>
-							<p className="font-extralight mt-7">Code of Ethics</p>
+							<Link
+								to="/"
+								className="block text-lg text-[#525252]"
+							>
+								The ComLinkany
+							</Link>
+							<Link
+								to="/"
+								className="block font-extralight mt-10"
+							>
+								About Luton
+							</Link>
+							<Link
+								to="/"
+								className="block font-extralight mt-7"
+							>
+								Legal
+							</Link>
+							<Link
+								to="/"
+								className="block font-extralight mt-7"
+							>
+								Code of Ethics
+							</Link>
 						</div>
 						<div>
-							<p className="text-lg text-[#525252]">Socials</p>
-							<p className="font-extralight mt-10">Instagram</p>
-							<p className="font-extralight mt-7">Twitter</p>
-							<p className="font-extralight mt-7">Youtube</p>
+							<Link
+								to="/"
+								className="block text-lg text-[#525252]"
+							>
+								Socials
+							</Link>
+							<Link
+								to="/"
+								className="block font-extralight mt-10"
+							>
+								Instagram
+							</Link>
+							<Link
+								to="/"
+								className="block font-extralight mt-7"
+							>
+								Twitter
+							</Link>
+							<Link
+								to="/"
+								className="block font-extralight mt-7"
+							>
+								Youtube
+							</Link>
 						</div>
 					</div>
 					<div className="w-full pl-5">

@@ -50,7 +50,7 @@ const NavBar = () => {
 				className="w-full bg-white py-2 flex items-center justify-center fixed z-20 shadow-sm"
 			>
 				<Container className="flex justify-between w-full items-center relative">
-					<h1 className="text-4xl font-semibold font-playfair ml-[52px]">
+					<h1 className="text-3xl font-semibold font-playfair ml-[52px]">
 						Luton
 					</h1>
 					<div className="flex gap-x-9 items-center">

@@ -4,28 +4,33 @@ import {
 	useAnimate,
 	useInView,
 } from "framer-motion";
+import { useContext, useEffect } from "react";
 import Container from "../../components/Container";
-import { useEffect } from "react";
 import { easing } from "../../utils/constants";
+import { TransitionContext } from "../../components/TransitionProvider";
 
 const styles = [
 	{
 		title: "Summer Collection",
 		image: "/assets/images/style1.png",
+		path: "/collection/summer",
 	},
 	{
 		title: "Winter Collection",
 		image: "/assets/images/style2.png",
+		path: "/collection/winter",
 	},
 	{
 		title: "Spring Collection",
 		image: "/assets/images/style3.png",
+		path: "/collection/spring",
 	},
 ];
 
 const StyleSeason = () => {
 	const [scope, animate] = useAnimate();
 	const isInView = useInView(scope, { once: true });
+	const { changePage } = useContext(TransitionContext);
 
 	useEffect(() => {
 		let controls;
@@ -34,12 +39,12 @@ const StyleSeason = () => {
 			const value = scope.current.offsetWidth;
 			const sequence: AnimationSequence = [
 				[
-					"#image1",
+					"#image2",
 					{ left: [0, value - 300] },
 					{ duration: 0.8, ease: easing },
 				],
 				[
-					"#image2",
+					"#image1",
 					{ left: [0, value / 2 - 150] },
 					{ duration: 0.8, ease: easing },
 				],
@@ -68,7 +73,7 @@ const StyleSeason = () => {
 					ref={scope}
 					className="mt-12 gap-x-12 h-[500px] relative w-full flex"
 				>
-					{styles.map(({ title, image }, i) => (
+					{styles.map(({ title, image, path }, i) => (
 						<motion.div
 							id={`image${i}`}
 							key={image}
@@ -81,7 +86,10 @@ const StyleSeason = () => {
 									alt=""
 								/>
 							</div>
-							<button className="w-[230px] bg-black text-white font-bold py-4 rounded-lg">
+							<button
+								onClick={() => changePage(path)}
+								className="w-[230px] bg-black text-white font-bold py-4 rounded-lg"
+							>
 								{title}
 							</button>
 						</motion.div>

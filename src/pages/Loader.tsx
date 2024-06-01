@@ -9,7 +9,11 @@ const Loader = () => {
 
 	useEffect(() => {
 		const sequence = [
-			["#overflow", { translateX: 0 }, { duration: 1.5, ease: easing }],
+			[
+				"#overflow",
+				{ translateX: ["-110%", "0"] },
+				{ duration: 1.5, ease: easing, delay: 0.5 },
+			],
 			["h1", { opacity: 1 }, { duration: 0.5 }],
 			["#overflow", { translateX: "100vh" }, { duration: 1, ease: "linear" }],
 			[
@@ -42,7 +46,6 @@ const Loader = () => {
 			<div className="w-fit relative h-[55px] overflow-hidden rounded-lg">
 				<motion.div
 					id="overflow"
-					initial={{ translateX: "-100%" }}
 					className="h-full w-full absolute bg-white rounded-lg"
 				></motion.div>
 				<h1 className="font-playfair text-white text-5xl font-bold opacity-0">

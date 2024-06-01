@@ -91,12 +91,12 @@ export default ImageGallery;
 
 export const Card = ({ image }: { image: string }) => {
 	return (
-		<motion.div className="relative w-[270px] h-[450px] overflow shrink-0">
+		<div className="relative w-[270px] h-[450px] overflow-hidden shrink-0 group cursor-crosshair">
 			<img
-				className="object-cover h-full w-full"
+				className="object-cover h-full w-full group-hover:scale-110 duration-[350ms] transition-transform ease-linear"
 				src={image}
 				alt=""
 			/>
-		</motion.div>
+		</div>
 	);
 };
