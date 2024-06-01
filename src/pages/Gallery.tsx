@@ -80,7 +80,7 @@ const Gallery = () => {
 					<div className="relative xl:-top-20 left-[30px] w-[70%] xl:w-fit">
 						<img
 							className="object-cover"
-							src="/assets/images/gallery/image9.png"
+							src="/assets/images/gallery/image8.png"
 							alt=""
 						/>
 					</div>
