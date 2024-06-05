@@ -32,7 +32,7 @@ const Products = () => {
 		target: containerRef,
 	});
 
-	const x = useTransform(scrollYProgress, [0, 1], ["0%", "-304%"]);
+	const x = useTransform(scrollYProgress, [0, 1], ["0%", "-300%"]);
 	return (
 		<motion.main
 			initial={{ opacity: 0 }}
