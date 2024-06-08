@@ -37,7 +37,7 @@ const Products = () => {
 		target: containerRef,
 	});
 
-	const x = useTransform(scrollYProgress, [0, 1], ["0%", "-300%"]);
+	const x = useTransform(scrollYProgress, [0, 1], ["0%", "-303%"]);
 
 	useMotionValueEvent(scrollY, "change", (latest) => console.log(latest));
 
