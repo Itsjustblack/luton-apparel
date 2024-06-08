@@ -48,7 +48,7 @@ const Loader = () => {
 					id="overflow"
 					className="h-full w-full absolute bg-white rounded-lg"
 				></motion.div>
-				<h1 className="font-playfair text-white text-5xl font-bold opacity-0">
+				<h1 className="font-playfair text-white text-5xl font-bold opacity-0 italic">
 					Luton Apparel
 				</h1>
 			</div>
