@@ -16,9 +16,11 @@ const Gallery = () => {
 						src="/assets/images/gallery/image1.png"
 						alt=""
 					/>
-					<div className="absolute bottom-10 left-0 right-0 mb-12 font-playfair text-white mx-auto text-center">
-						<h1 className="text-[52px]">Styled by You:</h1>
-						<p className="text-2xl">A Showcase of Our Apparel in the Wild</p>
+					<div className="absolute bottom-10 left-0 right-0 mb-12 text-white mx-auto text-center">
+						<h1 className="text-[80px] font-playfair italic">Styled by You:</h1>
+						<p className="text-2xl font-pt">
+							A Showcase of Our Apparel in the Wild
+						</p>
 					</div>
 				</header>
 				<div className="relative -top-10">

@@ -9,10 +9,7 @@ export default {
 		extend: {
 			fontFamily: {
 				playfair: ["Playfair Display", "serif"],
-				montserrat: ["Montserrat", "sans-serif"],
-				lato: ["Lato", "sans-serif"],
-				inter: ["Inter", "sans-serif"],
-				roboto: ["Roboto", "sans-serif"],
+				pt: ["PT Serif", "serif"],
 			},
 		},
 	},

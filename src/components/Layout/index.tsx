@@ -6,9 +6,5 @@ interface Props {
 }
 
 export function Layout({ children }: Props) {
-	// const lenis = useLenis(({ scroll }) => {
-	// 	called every scroll
-	// });
-
 	return <ReactLenis root>{children}</ReactLenis>;
 }

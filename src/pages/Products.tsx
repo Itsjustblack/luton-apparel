@@ -1,4 +1,9 @@
-import { motion, useScroll, useTransform } from "framer-motion";
+import {
+	motion,
+	useMotionValueEvent,
+	useScroll,
+	useTransform,
+} from "framer-motion";
 import { useRef } from "react";
 import ProductPreview from "../components/ProductPreview";
 
@@ -28,11 +33,14 @@ const images = [
 const Products = () => {
 	const containerRef = useRef<HTMLDivElement>(null);
 	const sliderRef = useRef<HTMLDivElement>(null);
-	const { scrollYProgress } = useScroll({
+	const { scrollYProgress, scrollY } = useScroll({
 		target: containerRef,
 	});
 
 	const x = useTransform(scrollYProgress, [0, 1], ["0%", "-300%"]);
+
+	useMotionValueEvent(scrollY, "change", (latest) => console.log(latest));
+
 	return (
 		<motion.main
 			initial={{ opacity: 0 }}

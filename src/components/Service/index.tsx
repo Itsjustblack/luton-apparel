@@ -15,8 +15,8 @@ const Service: FC<Props> = ({ title, image, text }) => {
 				alt=""
 			/>
 			<div className="flex flex-col">
-				<span className="font-semibold text-xl">{title}</span>
-				<p className="font-light text-sm">{text}</p>
+				<span className="font-semibold text-xl italic">{title}</span>
+				<p className="text-sm">{text}</p>
 			</div>
 		</div>
 	);

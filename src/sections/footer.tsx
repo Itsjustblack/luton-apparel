@@ -6,7 +6,7 @@ const Footer = () => {
 		<footer className="w-full bg-black text-white">
 			<Container className="h-screen my-auto">
 				<div className="flex justify-between max-w-[1100px] pt-12 items-center mx-auto">
-					<h1 className="text-3xl font-semibold text-white font-playfair ml-[52px]">
+					<h1 className="text-3xl font-semibold text-white font-playfair italic ml-[52px]">
 						Luton
 					</h1>
 					<span className="font-bold">© 2020 - 2023 Luton Inc</span>
@@ -56,7 +56,7 @@ const Footer = () => {
 								to="/"
 								className="block text-lg text-[#525252]"
 							>
-								The ComLinkany
+								The Company
 							</Link>
 							<Link
 								to="/"

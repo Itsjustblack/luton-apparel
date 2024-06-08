@@ -21,11 +21,11 @@ const ProductPreview = ({
 				alt=""
 			/>
 			<div className="absolute mb-12 flex flex-col items-center justify-center bottom-0 left-0 right-0 text-white">
-				<h1 className="font-playfair text-[52px] mb-6">{title}</h1>
+				<h1 className="font-playfair italic text-7xl mb-6">{title}</h1>
 				<button
 					type="button"
 					onClick={() => changePage(path)}
-					className="bg-[#d9d9d966] hover:bg-white hover:text-[#212121] transition-colors duration-150 ease-linear border border-white font-playfair max-w-[146px] w-full py-[10px] rounded-[50px]"
+					className="bg-[#d9d9d966] hover:bg-white hover:text-[#212121] transition-colors duration-150 ease-linear border border-white max-w-[146px] w-full py-[10px] rounded-[50px]"
 				>
 					Explore
 				</button>

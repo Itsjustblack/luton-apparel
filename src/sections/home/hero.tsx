@@ -29,7 +29,7 @@ const Hero = () => {
 						Pocket-friendly picks <br /> to get your best{" "}
 						<span className="text-[#800E13]">style</span>
 					</h1>
-					<p className="text-lg font-light leading-7 mt-5 text-black">
+					<p className="text-lg leading-7 mt-5 text-black">
 						No need to spend so much on Big names, our apparels are <br /> made
 						from the same stuff. Check it out!
 					</p>
@@ -44,7 +44,7 @@ const Hero = () => {
 							onClick={() => changePage("/collection/spring")}
 							className="flex items-center gap-x-2 group"
 						>
-							<span className="text-lg font-light text-black">
+							<span className="text-lg font-medium text-black">
 								Spring ‘23 collection{" "}
 							</span>
 							<img
@@ -64,7 +64,7 @@ const Hero = () => {
 								/>
 							</div>
 						)}
-						<span className="text-[40px] text-black font-light">10K</span>
+						<span className="text-[40px] text-black">10K</span>
 						<p className="text-black">
 							We’re proud to announce that we have now opened <br /> stores in{" "}
 							<i className="font-bold not-italic">10,000</i> places across

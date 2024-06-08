@@ -1,13 +1,10 @@
-import classNames from "classnames";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ImageGallery from "../components/ImageGallery";
-import useSize from "../hooks/useSize";
-import { useEffect, useState } from "react";
 
 const Collection = () => {
 	const { name } = useParams();
-	const [, height] = useSize();
 	const [isLoaded, setIsLoaded] = useState(false);
 
 	useEffect(() => {
@@ -24,12 +21,7 @@ const Collection = () => {
 			transition={{ duration: 0.5, ease: "linear" }}
 			className="pt-[56px]"
 		>
-			<div
-				className={classNames({
-					"mt-10": height <= 768,
-					"mt-20": height > 768,
-				})}
-			>
+			<div className="h-[calc(100vh_-_56px)] flex justify-center items-center">
 				{isLoaded && <ImageGallery collection={name!} />}
 			</div>
 		</motion.main>

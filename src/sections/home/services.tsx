@@ -41,7 +41,7 @@ const Services = () => {
 	}, [animate, isInView]);
 
 	return (
-		<section className="pt-16 pb-16 mb-[192px]">
+		<section className="pt-16 pb-16 mb-[150px]">
 			<h2 className="font-playfair text-[52px] text-center">Our Services</h2>
 			<Container>
 				<div className="grid grid-cols-2 justify-between mt-[94px] gap-x-[100px]">

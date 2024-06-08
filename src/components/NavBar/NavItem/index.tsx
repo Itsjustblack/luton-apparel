@@ -12,7 +12,7 @@ const NavItem: React.FC<NavItemProps> = ({ text, link }) => {
 	return (
 		<p
 			onClick={() => changePage(link)}
-			className="font-sm hover:border-b border-black hover:cursor-pointer"
+			className="hover:border-b border-black hover:cursor-pointer font-playfair"
 		>
 			{text}
 		</p>
