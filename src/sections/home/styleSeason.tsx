@@ -29,7 +29,7 @@ const styles = [
 
 const StyleSeason = () => {
 	const [scope, animate] = useAnimate();
-	const isInView = useInView(scope, { once: true });
+	const isInView = useInView(scope, { once: true, amount: 0.6 });
 	const { changePage } = useContext(TransitionContext);
 
 	useEffect(() => {

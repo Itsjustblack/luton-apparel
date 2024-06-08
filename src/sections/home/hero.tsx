@@ -11,7 +11,7 @@ const Hero = () => {
 	const { scrollY } = useScroll();
 
 	useMotionValueEvent(scrollY, "change", (latest) => {
-		latest > 100 && setIsShown(true);
+		latest > 130 && setIsShown(true);
 	});
 
 	const { changePage } = useContext(TransitionContext);
@@ -54,7 +54,7 @@ const Hero = () => {
 							/>
 						</button>
 					</div>
-					<div className="border border-black rounded-lg mt-[52px] flex items-center justify-center gap-x-3 py-9 w-full relative">
+					<div className="border border-black rounded-lg mt-[52px] flex items-center justify-center py-9 w-full relative">
 						{isShown && (
 							<div className="confetti-container pointer-events-none">
 								<DotLottieReact
@@ -64,7 +64,7 @@ const Hero = () => {
 								/>
 							</div>
 						)}
-						<span className="text-[40px] text-black">10K</span>
+						<p className="text-[40px] text-black mr-3">10K</p>
 						<p className="text-black">
 							We’re proud to announce that we have now opened <br /> stores in{" "}
 							<i className="font-bold not-italic">10,000</i> places across
