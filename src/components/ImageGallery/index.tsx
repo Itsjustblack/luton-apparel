@@ -6,8 +6,8 @@ import {
 } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
-const FAST_DURATION = 20;
-const SLOW_DURATION = 40;
+const FAST_DURATION = 30;
+const SLOW_DURATION = 65;
 
 const ImageGallery = ({ collection }: { collection: string }) => {
 	const containerRef = useRef<HTMLDivElement>(null);
@@ -55,8 +55,8 @@ const ImageGallery = ({ collection }: { collection: string }) => {
 			animate={{ opacity: 1, transition: { duration: 0.5, ease: "linear" } }}
 			className="w-full overflow-y-auto overflow-x-hidden relative"
 		>
-			<div className="absolute rounded-r-md h-full w-20 top-0 left-0 rotate-180 z-10 bg-gradient-to-l from-[rgba(73,73,73,0.5160189075630253)] to-[rgba(0,0,0,0)]"></div>
-			<div className="absolute rounded-r-md h-full w-20 top-0 right-0 z-10 bg-gradient-to-l from-[rgba(73,73,73,0.5160189075630253)] to-[rgba(0,0,0,0)]"></div>
+			<div className="absolute rounded-l-md h-full w-[30px] top-0 left-0 rotate-180 z-10 bg-gradient-to-l from-[rgba(73,73,73,0.5160189075630253)] to-[rgba(0,0,0,0)]"></div>
+			<div className="absolute rounded-l-md h-full w-[30px] top-0 right-0 z-10 bg-gradient-to-l from-[rgba(73,73,73,0.5160189075630253)] to-[rgba(0,0,0,0)]"></div>
 			<motion.div
 				ref={containerRef}
 				onHoverStart={() => {
@@ -68,7 +68,7 @@ const ImageGallery = ({ collection }: { collection: string }) => {
 					setDuration(FAST_DURATION);
 				}}
 				style={{ x: xTranslation, width: "max-content" }}
-				className="flex gap-x-8"
+				className="flex gap-x-8 mix-blend-overlay"
 			>
 				{Array.from({ length: 7 }).map((_, i) => (
 					<Card
@@ -93,7 +93,7 @@ export const Card = ({ image }: { image: string }) => {
 	return (
 		<div className="relative w-[270px] h-[450px] overflow-hidden shrink-0 group cursor-crosshair">
 			<img
-				className="object-cover h-full w-full group-hover:scale-110 duration-[350ms] transition-transform ease-linear"
+				className="object-cover h-full w-full group-hover:scale-110 duration-500 transition-transform ease-linear"
 				src={image}
 				alt=""
 			/>
