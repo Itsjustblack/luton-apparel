@@ -43,7 +43,7 @@ const Loader = () => {
 				id="background"
 				className="absolute top-0 w-full h-full bg-black"
 			></div>
-			<div className="w-fit relative h-[55px] overflow-hidden rounded-lg">
+			<div className="w-[320px] relative h-[55px] overflow-hidden rounded-lg">
 				<motion.div
 					id="overflow"
 					className="h-full w-full absolute bg-white rounded-lg"
