@@ -12,7 +12,7 @@ const Loader = () => {
 			[
 				"#overflow",
 				{ translateX: ["-110%", "0"] },
-				{ duration: 1.5, ease: easing, delay: 3 },
+				{ duration: 1.5, ease: easing, delay: 1 },
 			],
 			["h1", { opacity: 1 }, { duration: 0.5 }],
 			["#overflow", { translateX: "100vh" }, { duration: 1, ease: "linear" }],
